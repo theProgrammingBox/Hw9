@@ -48,7 +48,7 @@ int main ()
 	printPerimeter(rectangle);
 	printArea(rectangle);
 	print(rectangle);
-	DrawShape(rectangle);
+	DrawShape(rectangle, 10, 10);
 	printPerimeter(rectangle);
 	printArea(rectangle);
 	print(rectangle);
