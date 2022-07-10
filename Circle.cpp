@@ -45,7 +45,7 @@ virtual double Circle::calcArea() const
 *************************************************************************/
 void Circle::Print() const 
 {
-    cout << "X: " << Shape(this).x << " Y: " << Shape(this).y << endl;
+    Shape::Print();
 }
 
 /*************************************************************************

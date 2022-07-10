@@ -53,7 +53,7 @@ double Rectangle::calcArea() const
 *************************************************************************/
 void Rectangle::Print() const 
 {
-    cout << "X: " << Shape(this).x << " Y: " << Shape(this).y << endl;
+    Shape::Print();
 }
 
 /*************************************************************************
