@@ -47,11 +47,11 @@ int main ()
 	cout << "Rectangle:" << endl;
 	printPerimeter(rectangle);
 	printArea(rectangle);
-	print(rectangle);
+	rectangle.Print();
 	DrawShape(rectangle, 10, 10);
 	printPerimeter(rectangle);
 	printArea(rectangle);
-	print(rectangle);
+    rectangle.Print();
 	cout << endl;
 
 	return 0;
