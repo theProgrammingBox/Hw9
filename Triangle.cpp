@@ -57,6 +57,23 @@ void Triangle::Print() const
 }
 
 /*************************************************************************
+* Method Move: Class Triangle
+*------------------------------------------------------------------------
+* This function will add some x and y coordinate of the shape.
+*------------------------------------------------------------------------
+* PRE-CONDITIONS
+* 		int x: the amount to add to the x coordinate
+*       int y: the amount to add to the y coordinate
+*
+* POST-CONDITIONS
+* 		It will add the x and y coordinate of the shape.
+*************************************************************************/
+void Triangle::Move(int x, int y)
+{
+    Shape::Move(x, y);
+}
+
+/*************************************************************************
 * Method UpdateDimensions: Class Triangle
 *------------------------------------------------------------------------
 * This function will update the length of triangle.

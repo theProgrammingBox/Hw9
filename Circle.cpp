@@ -49,6 +49,23 @@ void Circle::Print() const
 }
 
 /*************************************************************************
+* Method Move: Class Circle
+*------------------------------------------------------------------------
+* This function will add some x and y coordinate of the shape.
+*------------------------------------------------------------------------
+* PRE-CONDITIONS
+* 		int x: the amount to add to the x coordinate
+*       int y: the amount to add to the y coordinate
+*
+* POST-CONDITIONS
+* 		It will add the x and y coordinate of the shape.
+*************************************************************************/
+void Circle::Move(int x, int y)
+{
+    Shape::Move(x, y);
+}
+
+/*************************************************************************
 * Method UpdateDimensions: Class Circle
 *------------------------------------------------------------------------
 * This function will update the radius of circle.

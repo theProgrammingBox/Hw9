@@ -57,6 +57,23 @@ void Rectangle::Print() const
 }
 
 /*************************************************************************
+* Method Move: Class Rectangle
+*------------------------------------------------------------------------
+* This function will add some x and y coordinate of the shape.
+*------------------------------------------------------------------------
+* PRE-CONDITIONS
+* 		int x: the amount to add to the x coordinate
+*       int y: the amount to add to the y coordinate
+*
+* POST-CONDITIONS
+* 		It will add the x and y coordinate of the shape.
+*************************************************************************/
+void Rectangle::Move(int x, int y)
+{
+    Shape::Move(x, y);
+}
+
+/*************************************************************************
 * Method UpdateDimensions: Class Rectangle
 *------------------------------------------------------------------------
 * This function will update the length and width of rectangle.
