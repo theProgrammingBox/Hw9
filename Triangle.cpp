@@ -53,7 +53,7 @@ double Triangle::calcArea() const
 *************************************************************************/
 void Triangle::Print() const 
 {
-    cout << "X: " << Shape::x << " Y: " << Shape::y << endl;
+    cout << "X: " << Shape(this).x << " Y: " << Shape(this).y << endl;
 }
 
 /*************************************************************************
