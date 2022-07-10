@@ -67,7 +67,7 @@ void Rectangle::Print() const
 * POST-CONDITIONS
 * 		It will update the length and width of rectangle.
 *************************************************************************/
-void Rectangle::UpdateDimensions(int length, int width)
+void Rectangle::UpdateDimensions()
 {
     cout << "Enter the length of rectangle: ";
     cin >> this->length;
