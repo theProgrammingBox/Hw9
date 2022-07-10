@@ -1,76 +1,66 @@
-#include "Rectangle.h"
-
-/*
-virtual double calcPerimeter() const;
-virtual double calcArea() const;
-void Print() const;
-
-virtual void UpdateDimensions(int length, int width);
-*/
+#include "Circle.h"
 
 /*************************************************************************
-* Method calcPerimeter: Class Rectangle
+* Method calcPerimeter: Class Circle
 *------------------------------------------------------------------------
-* This function calculate the perimeter of rectangle.
+* This function calculate the perimeter of circle.
 *------------------------------------------------------------------------
 * PRE-CONDITIONS
 * 		none
 *
 * POST-CONDITIONS
-* 		return the perimeter of rectangle
+* 		return the perimeter of circle
 *************************************************************************/
-double Rectangle::calcPerimeter() const 
+virtual double Circle::calcPerimeter() const 
 {
-    return 2 * (length + width);
+    return 3.14159 * 2 * r;
 }
 
 /*************************************************************************
-* Method calcArea: Class Rectangle
+* Method calcArea: Class Circle
 *------------------------------------------------------------------------
-* This function calculate the area of rectangle.
+* This function calculate the area of circle.
 *------------------------------------------------------------------------
 * PRE-CONDITIONS
 * 		none
 *
 * POST-CONDITIONS
-* 		return the area of rectangle
+* 		return the area of circle
 *************************************************************************/
-double Rectangle::calcArea() const 
+virtual double Circle::calcArea() const 
 {
-    return length * width;
+    return 3.14159 * r * r;
 }
 
 /*************************************************************************
-* Method Print: Class Rectangle
+* Method Print: Class Circle
 *------------------------------------------------------------------------
-* This function print the coordinates of rectangle.
+* This function print the coordinates of circle.
 *------------------------------------------------------------------------
 * PRE-CONDITIONS
 * 		none
 *
 * POST-CONDITIONS
-* 		It will print the x coordinate and y coordinate of rectangle.
+* 		It will print the x coordinate and y coordinate of circle.
 *************************************************************************/
-void Rectangle::Print() const 
+void Circle::Print() const 
 {
     cout << "X: " << x << " Y: " << y << endl;
 }
 
 /*************************************************************************
-* Method UpdateDimensions: Class Rectangle
+* Method UpdateDimensions: Class Circle
 *------------------------------------------------------------------------
-* This function will update the length and width of rectangle.
+* This function will update the radius of circle.
 *------------------------------------------------------------------------
 * PRE-CONDITIONS
 * 		none
 *
 * POST-CONDITIONS
-* 		It will update the length and width of rectangle.
+* 		It will update the radius of circle
 *************************************************************************/
-void Rectangle::UpdateDimensions(int length, int width)
+void Circle::UpdateDimensions() 
 {
-    cout << "Enter the length of rectangle: ";
-    cin >> this->length;
-    cout << "Enter the width of rectangle: ";
-    cin >> this->width;
+    cout << "Enter the radius: ";
+    cin >> this->r;
 }

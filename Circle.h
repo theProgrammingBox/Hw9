@@ -1,15 +1,14 @@
-#pragma once
 #include "Shape.h"
 
-class Rectangle : public Shape
+class Circle : public Shape
 {
 public:
 
     /*** CONSTRUCTOR & DESTRUCTOR ***/
 
-	Rectangle() : length(0), width(0) {};
-	Rectangle(int length, int width) : length(length), width(width) {};
-	virtual ~Rectangle() {};
+    Circle () : r{0} { };
+    Circle (int r) : r{r} { };
+    virtual ~Circle () { };
 
     /*** ACCESSORS ***/
 
@@ -22,6 +21,5 @@ public:
     virtual void UpdateDimensions();
 
 private:
-	int length;
-	int width;
+    int r;
 };

@@ -1,61 +1,61 @@
 #include "Rectangle.h"
 #include "Triangle.h"
+#include "Circle.h"
+
+/*
+3.  Do we need to override Move for derived classes? Explain?
+
+    No, we don't need to override Move for derived classes.
+    The base class Move function will be called automatically.
+    The derived classes will only need to override UpdateDimensions.
+ 
+4.  What kind of binding is occurring for Print vs 
+UpdateDimensions ? Explain the difference between static and 
+dynamic binding, static and dynamic polymorphism? 
+
+    Static binding occurs when the compiler knows the type of the 
+    object at compile time. Dynamic binding occurs when the 
+    compiler doesn't know the type of the object at compile time.
+    Static polymorphism occurs when the compiler knows the type of 
+    the object at compile time. Dynamic polymorphism occurs when 
+    the compiler doesn't know the type of the object at compile 
+    time.
+ 
+5.  Write the function prototype and definition for a global 
+function DrawShape which will invoke the Move and 
+UpdateDimensions virtual functions. Explain the importance of 
+Interface Inheritance and how this applies to DrawShape. 
+    
+    DrawShape() will invoke the Move and UpdateDimensions virtual 
+    functions. Interface Inheritance is the concept of a class 
+    inheriting from another class. This means that the class 
+    inheriting from the base class will have access to the 
+    functions of the base class. This is called Interface 
+    Inheritance.
+*/
 
 void printPerimeter(Shape &graphic);
 
 void printArea(Shape &graphic);
 
-//void printPerimeter(Shape *graphic);
-//
-//void printArea(Shape *graphic);
+void DrawShape(Shape &graphic, int x, int y);
 
 int main ()
 {
-//	Rectangle *rectangle = new Rectangle(10,5);
-//	Triangle  *triangle = new Triangle(10);
-
-	int recL;
-	int recW;
-	int triL;
-
-	cout << PrintHeaderSS("HW09", 'L', 9);
-
-	cout << "Enter length for rectangle: ";
-	cin  >> recL;
-	cout << "Enter width for rectangle: ";
-	cin  >> recW;
-
-	Rectangle rectangle(recL,recW);
-
+	Rectangle rectangle;
+    rectangle.UpdateDimensions();
 	cout << "Rectangle:" << endl;
 	printPerimeter(rectangle);
 	printArea(rectangle);
+	print(rectangle);
+	DrawShape(rectangle);
+	printPerimeter(rectangle);
+	printArea(rectangle);
+	print(rectangle);
 	cout << endl;
-
-	cout << "Enter length for triangle: ";
-	cin  >> triL;
-
-	Triangle triangle(triL);
-
-	cout << "Triangle:" << endl;
-	printPerimeter(triangle);
-	printArea(triangle);
-
-//	delete rectangle;
-//	delete triangle;
 
 	return 0;
 }
-
-//void printPerimeter(Shape *graphic)
-//{
-//	cout << "Perimeter: " << graphic->calcPerimeter() << endl;
-//}
-//
-//void printArea(Shape *graphic)
-//{
-//    cout << "Area: " << graphic->calcArea() << endl;
-//}
 
 void printPerimeter(Shape &graphic)
 {
@@ -67,33 +67,8 @@ void printArea(Shape &graphic)
     cout << "Area: " << graphic.calcArea() << endl;
 }
 
-string PrintHeaderSS(string  asName,  // IN - assignment Name - used for output
-				     char    asType,  // IN - assignment type
-				                      //    - (LAB or ASSIGN) - used for output
-				     int     asNum)   // IN - assign. Number  - used for output
+void DrawShape(Shape &graphic, int x, int y)
 {
-	ostringstream output; // used to store thing want to output
-
-	output << left;
-	output << "**************************************************\n";
-	output << "* PROGRAMMED BY : Hank Lin\n";
-	output << "* " << setw(14) << "STUDENT ID" << ": 1211983\n";
-	output << "* " << setw(14) << "CLASS" << ": CS1C - MTWTh - 5:30pm\n";
-	output << "* " ;
-
-	// PROCESSING - This will adjust setws and format appropriately
-	//              based on if this is a lab 'L' or assignment
-	if (toupper(asType) == 'L')
-	{
-		output << "LAB #" << setw(9);
-	} // END - if (toupper(asType) == 'L')
-	else
-	{
-		output << "ASSIGNMENT #" << setw(2);
-	} // END - else
-	output << asNum << ": " << asName << endl;
-	output << "**************************************************\n\n";
-	output << right;
-
-	return output.str();
+    graphic.Move(x, y);
+    graphic.UpdateDimensions();
 }

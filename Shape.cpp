@@ -1,76 +1,67 @@
-#include "Rectangle.h"
-
-/*
-virtual double calcPerimeter() const;
-virtual double calcArea() const;
-void Print() const;
-
-virtual void UpdateDimensions(int length, int width);
-*/
+#include "Shape.h"
 
 /*************************************************************************
-* Method calcPerimeter: Class Rectangle
+* Method calcPerimeter: Class Shape
 *------------------------------------------------------------------------
-* This function calculate the perimeter of rectangle.
+* This function calculate the perimeter of the shape.
 *------------------------------------------------------------------------
 * PRE-CONDITIONS
 * 		none
 *
 * POST-CONDITIONS
-* 		return the perimeter of rectangle
+* 		return 0
 *************************************************************************/
-double Rectangle::calcPerimeter() const 
+double Shape::calcPerimeter() const
 {
-    return 2 * (length + width);
+    return 0;
 }
 
 /*************************************************************************
-* Method calcArea: Class Rectangle
+* Method calcArea: Class Shape
 *------------------------------------------------------------------------
-* This function calculate the area of rectangle.
+* This function calculate the area of the shape.
 *------------------------------------------------------------------------
 * PRE-CONDITIONS
 * 		none
 *
 * POST-CONDITIONS
-* 		return the area of rectangle
+* 		return 0
 *************************************************************************/
-double Rectangle::calcArea() const 
+double Shape::calcArea() const
 {
-    return length * width;
+    return 0;
 }
 
 /*************************************************************************
-* Method Print: Class Rectangle
+* Method Print: Class Shape
 *------------------------------------------------------------------------
-* This function print the coordinates of rectangle.
+* This function print the coordinates of the shape.
 *------------------------------------------------------------------------
 * PRE-CONDITIONS
 * 		none
 *
 * POST-CONDITIONS
-* 		It will print the x coordinate and y coordinate of rectangle.
+* 		It will print the x coordinate and y coordinate of the shape.
 *************************************************************************/
-void Rectangle::Print() const 
+void Shape::Print() const
 {
     cout << "X: " << x << " Y: " << y << endl;
 }
 
 /*************************************************************************
-* Method UpdateDimensions: Class Rectangle
+* Method Move: Class Shape
 *------------------------------------------------------------------------
-* This function will update the length and width of rectangle.
+* This function will add some x and y coordinate of the shape.
 *------------------------------------------------------------------------
 * PRE-CONDITIONS
-* 		none
+* 		int x: the amount to add to the x coordinate
+*       int y: the amount to add to the y coordinate
 *
 * POST-CONDITIONS
-* 		It will update the length and width of rectangle.
+* 		It will add the x and y coordinate of the shape.
 *************************************************************************/
-void Rectangle::UpdateDimensions(int length, int width)
+void Shape::Move(int x, int y)
 {
-    cout << "Enter the length of rectangle: ";
-    cin >> this->length;
-    cout << "Enter the width of rectangle: ";
-    cin >> this->width;
+    this->x += x;
+    this->y += y;
 }
