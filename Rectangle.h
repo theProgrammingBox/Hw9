@@ -19,6 +19,7 @@ public:
 
     /*** MUTATORS ***/
 
+    virtual void Move(int x, int y);
     virtual void UpdateDimensions();
 
 private:

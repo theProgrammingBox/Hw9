@@ -69,7 +69,7 @@ void Triangle::Print() const
 * 		It will add the x and y coordinate of the shape.
 *************************************************************************/
 void Triangle::Move(int x, int y)
-{
+{g
     Shape::Move(x, y);
 }
 
