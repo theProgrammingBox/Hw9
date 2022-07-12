@@ -8,7 +8,7 @@ all: Hw9
 Hw9: $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o Hw9
 
-Hw9.o: Hw9.cpp Triangle.o Rectangle.o
+Hw9.o: Hw9.cpp Triangle.o Rectangle.o Circle.o
 	$(CC) $(FLAGS) -c Hw9.cpp
 
 Triangle.o: Triangle.cpp Triangle.h Shape.h Header.h
