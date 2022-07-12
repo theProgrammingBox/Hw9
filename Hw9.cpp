@@ -1,6 +1,32 @@
+/*************************************************************************
+ * AUTHOR     	 : Justin Gea
+ * Assignment #9 : Virtual Functions & Abstract Classes
+ * CLASS      	 : CS 1C
+ * SECTION    	 : MTWTTH 03:00pm - 05:35pm
+ * DUE DATE   	 : 07/12/2022
+ *************************************************************************/
+
 #include "Rectangle.h"
 #include "Triangle.h"
 #include "Circle.h"
+
+/**********************************************************
+ *
+ * Virtual Functions & Abstract Classes
+ *_________________________________________________________
+ * This program will demonstrate the use of virtual functions
+ * and abstract classes by creating derived classes 
+ * Rectangle, Triangle, and Circle while checking the
+ * virtual functions and abstract classes.
+ *_________________________________________________________
+ * INPUT:
+ * x: The x coordinate of the shape.
+ * y: The y coordinate of the shape.
+ * The shape specific variables of the shape.
+ *
+ * OUTPUT:
+ * The shape specific variables of the shape.
+ ***********************************************************/
 
 /*
 3.  Do we need to override Move for derived classes? Explain?
@@ -38,37 +64,94 @@ void printPerimeter(Shape &graphic);
 
 void printArea(Shape &graphic);
 
-void DrawShape(Shape &graphic, int x, int y);
+void DrawShape(Shape &graphic);
 
 int main ()
 {
-	Rectangle rectangle;
-    rectangle.UpdateDimensions();
 	cout << "Rectangle:" << endl;
+	Rectangle rectangle;
+	DrawShape(rectangle);
 	printPerimeter(rectangle);
 	printArea(rectangle);
 	rectangle.Print();
-	DrawShape(rectangle, 10, 10);
-	printPerimeter(rectangle);
-	printArea(rectangle);
-    rectangle.Print();
 	cout << endl;
+
+    cout << "Triangle:" << endl;
+    Triangle triangle;
+    DrawShape(triangle);
+    printPerimeter(triangle);
+    printArea(triangle);
+    triangle.Print();
+    cout << endl;
+
+    cout << "Circle:" << endl;
+    Circle circle;
+    DrawShape(circle);
+    printPerimeter(circle);
+    printArea(circle);
+    circle.Print();
+    cout << endl;
 
 	return 0;
 }
+
+/*************************************************************************
+ * Method printPerimeter: Class non
+ *------------------------------------------------------------------------
+ * This function will invoke the calcPerimeter function of the
+ * derived class.
+ *------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ * 		none
+ *
+ * POST-CONDITIONS
+ * 		It will print the perimeter of the derived class
+ *************************************************************************/
 
 void printPerimeter(Shape &graphic)
 {
 	cout << "Perimeter: " << graphic.calcPerimeter() << endl;
 }
 
+/*************************************************************************
+ * Method printArea: Class non
+ *------------------------------------------------------------------------
+ * This function will invoke the calcArea function of the
+ * derived class.
+ *------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ * 		none
+ *
+ * POST-CONDITIONS
+ * 		It will print the area of the derived class
+ *************************************************************************/
+
 void printArea(Shape &graphic)
 {
     cout << "Area: " << graphic.calcArea() << endl;
 }
 
-void DrawShape(Shape &graphic, int x, int y)
+/*************************************************************************
+ * Method DrawShape: Class non
+ *------------------------------------------------------------------------
+ * This function will invoke the Move and UpdateDimensions virtual 
+ * functions.
+ *------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ * 		none
+ *
+ * POST-CONDITIONS
+ * 		It will change the x and y coordinates of the derived class
+ *      and change the dimensions of the derived class.
+ *************************************************************************/
+
+void DrawShape(Shape &graphic)
 {
+    int x, y;
+    cout << "Enter x coordinate: ";
+    cin >> x;
+    cout << "Enter y coordinate: ";
+    cin >> y;
     graphic.Move(x, y);
     graphic.UpdateDimensions();
 }
