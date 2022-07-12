@@ -9,7 +9,7 @@ public:
     
 	Shape() : x{0}, y{0} { };
 	Shape(int x, int y) : x{x}, y{y} { };
-	virtual ~Shape() {};
+	virtual ~Shape() { };
 
     /*** ACCESSORS ***/
 
