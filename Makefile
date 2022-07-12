@@ -11,7 +11,6 @@ Hw9: $(OBJS)
 Hw9.o: Hw9.cpp Triangle.o Rectangle.o
 	$(CC) $(FLAGS) -c Hw9.cpp
 
-
 Triangle.o: Triangle.cpp Triangle.h Shape.h Header.h
 	$(CC) $(FLAGS) -c Triangle.cpp
 

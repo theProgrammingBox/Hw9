@@ -12,7 +12,7 @@ public:
 
     /*** ACCESSORS ***/
 
-	virtual double calcPerimeter() const
+	virtual double calcPerimeter() const;
 	virtual double calcArea() const;
     void Print() const;
 
