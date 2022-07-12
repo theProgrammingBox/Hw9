@@ -11,7 +11,7 @@
 * POST-CONDITIONS
 * 		return the perimeter of circle
 *************************************************************************/
-virtual double Circle::calcPerimeter() const 
+double Circle::calcPerimeter() const 
 {
     return 3.14159 * 2 * r;
 }
@@ -27,7 +27,7 @@ virtual double Circle::calcPerimeter() const
 * POST-CONDITIONS
 * 		return the area of circle
 *************************************************************************/
-virtual double Circle::calcArea() const 
+double Circle::calcArea() const 
 {
     return 3.14159 * r * r;
 }
