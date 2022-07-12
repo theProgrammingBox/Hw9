@@ -20,7 +20,7 @@ public:
     /*** MUTATORS ***/
 
     virtual void Move(int x, int y);
-    virtual void UpdateDimensions();
+    virtual void UpdateDimensions() {};
 
 private:
 	int x;
