@@ -65,8 +65,8 @@ void Shape::Print() const
 * POST-CONDITIONS
 * 		It will add the x and y coordinate of the shape.
 *************************************************************************/
-void Shape::Move(int x, int y)
+void Shape::Move(int x2, int y2)
 {
-    this->x += x;
-    this->y += y;
+    x += x2;
+    y += y2;
 }
