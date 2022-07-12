@@ -1,7 +1,7 @@
 CC = g++
 FLAGS = -std=c++14 -Wall -g
-OBJS = Hw9.o Triangle.o Rectangle.o
-FILES = Header.h Hw9.cpp Shape.h Triangle.h Triangle.cpp Rectangle.h Rectangle.cpp
+OBJS = Hw9.o Triangle.o Rectangle.o Circle.o
+FILES = Header.h Hw9.cpp Shape.h Triangle.h Triangle.cpp Rectangle.h Rectangle.cpp Circle.h Circle.cpp
 
 all: Hw9
 
@@ -16,6 +16,9 @@ Triangle.o: Triangle.cpp Triangle.h Shape.h Header.h
 
 Rectangle.o: Rectangle.cpp Rectangle.h Shape.h Header.h
 	$(CC) $(FLAGS) -c Rectangle.cpp
+
+Circle.o: Circle.cpp Circle.h Shape.h Header.h
+	$(CC) $(FLAGS) -c Circle.cpp
 
 tar:
 	tar -cf Hw9.tar Hw9.scr Makefile $(FILES)
